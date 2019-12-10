@@ -1,0 +1,45 @@
+﻿<Page x:Class="OEE_WPF.Performance"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OEE_WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="700"
+      Title="Performance">
+
+    <Grid Margin="10,0,10,10">
+        <Label Content="Produção com ritmo alterado" HorizontalAlignment="Left" Margin="186.405,30.834,0,0" VerticalAlignment="Top" Height="25" Width="300"/>
+        <ListView Name="inconsistentProductionList" HorizontalAlignment="Left" Height="150" Margin="186.405,60.834,0,0" VerticalAlignment="Top" Width="300">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Produção" Width="150" DisplayMemberBinding="{Binding [0]}"/>
+                    <GridViewColumn Header="Tempo" Width="150" DisplayMemberBinding="{Binding [1]}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Quantia produzida" HorizontalAlignment="Left" Margin="186.405,215.832,0,0" VerticalAlignment="Top" Width="128.476"/>
+        <TextBox Name="productionAmountTextField" HorizontalAlignment="Left" Height="23" Margin="319.881,219.834,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166.524"/>
+        <Label Content="Tempo de produção" HorizontalAlignment="Left" Margin="186.405,243.832,0,0" VerticalAlignment="Top" Width="128.476"/>
+        <TextBox Name="productionTimeFieldText" HorizontalAlignment="Left" Height="23" Margin="319.881,247.834,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166.524"/>
+        <Button Content="Adicionar" HorizontalAlignment="Left" Margin="187.5,275.832,0,0" VerticalAlignment="Top" Width="298.905" Click="Add_Click"/>
+        <Label Content="Produção esperada:" HorizontalAlignment="Left" Margin="187.5,316.666,0,0" VerticalAlignment="Top" Width="298.905"/>
+        <TextBox Name="expectedProductionAmountTextField" HorizontalAlignment="Left" Height="23" Margin="187.5,347.666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138.905"/>
+        <ComboBox Name="typeComboBox" HorizontalAlignment="Left" Margin="331.405,348.666,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="0" SelectionChanged="typeComboBox_SelectionChanged">
+            <ComboBoxItem Content="peças"/>
+            <ComboBoxItem Content="metros"/>
+            <ComboBoxItem Content="serviços"/>
+        </ComboBox>
+        <ComboBox Name="speedComboBox" HorizontalAlignment="Left" Margin="411.405,348.666,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="0" SelectionChanged="speedComboBox_SelectionChanged">
+            <ComboBoxItem Content="segundo"/>
+            <ComboBoxItem Content="minuto"/>
+            <ComboBoxItem Content="hora"/>
+        </ComboBox>
+        <Label Content="Produção esperada" HorizontalAlignment="Left" Margin="186.878,408.118,0,0" VerticalAlignment="Top" Width="141.609" Height="24.843"/>
+        <Label Content="Produção obtida" HorizontalAlignment="Left" Margin="186.405,437.687,0,0" VerticalAlignment="Top" Width="141.608" Height="24.842"/>
+        <Label Name="actualProduction" Content="0" HorizontalAlignment="Left" Margin="344.664,437.687,0,0" VerticalAlignment="Top" Width="141.608" Height="24.842"/>
+        <Label Name="expectedProduction" Content="0" HorizontalAlignment="Left" Margin="344.122,408.118,0,0" VerticalAlignment="Top" Width="141.608" Height="24.843"/>
+        <Button Content="Próximo" HorizontalAlignment="Left" Margin="186.878,477.891,0,0" VerticalAlignment="Top" Width="299.527" Click="Next" Height="19.109"/>
+        <Button Content="Calcular" HorizontalAlignment="Left" Margin="186.405,383.118,0,0" VerticalAlignment="Top" Width="300" Click="Calculate"/>
+    </Grid>
+</Page>

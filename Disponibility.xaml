@@ -1,0 +1,36 @@
+﻿<Page x:Class="OEE_WPF.Disponibility"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OEE_WPF"
+      mc:Ignorable="d" d:DesignWidth="700"
+      Title="Disponibilidade" Height="600">
+
+    <Grid Margin="10,0,10,10">
+        <Label Content="Paradas planejadas" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="300"/>
+        <ListBox Name="plannedList" HorizontalAlignment="Left" Height="150" Margin="10,40,0,0" VerticalAlignment="Top" Width="300" />
+        <Label Content="Paradas nao planejadas" HorizontalAlignment="Left" Margin="343.333,10,0,0" VerticalAlignment="Top" Height="25" Width="300"/>
+        <ListBox Name="unplannedList" HorizontalAlignment="Left" Height="150" Margin="343.333,40,0,0" VerticalAlignment="Top" Width="300"/>
+        <Label Content="Motivo da interrupção" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="128.476"/>
+        <Label Content="Motivo da interrupção" HorizontalAlignment="Left" Margin="343.333,195,0,0" VerticalAlignment="Top" Width="134.19"/>
+        <TextBox Name="plannedDescriptionTextBox" HorizontalAlignment="Left" Height="23" Margin="143.476,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166.524"/>
+        <TextBox Name="unplannedDescriptionTextBox" HorizontalAlignment="Left" Height="23" Margin="482.523,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160.81"/>
+        <Label Content="Tempo de interrupção" HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top" Width="128.476"/>
+        <TextBox Name="plannedTimeTextBox" HorizontalAlignment="Left" Height="23" Margin="143.476,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166.524"/>
+        <Label Content="Tempo de interrupção" HorizontalAlignment="Left" Margin="343.333,223,0,0" VerticalAlignment="Top" Width="134.19"/>
+        <TextBox Name="unplannedTimeTextBox" HorizontalAlignment="Left" Height="23" Margin="482.523,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160.81"/>
+        <Button Content="Adicionar" HorizontalAlignment="Left" Margin="11.095,255,0,0" VerticalAlignment="Top" Width="298.905" Click="AddPlannedStop"/>
+        <Button Content="Adicionar" HorizontalAlignment="Left" Margin="343.333,254,0,0" VerticalAlignment="Top" Width="300" Click="AddUnplannedStop"/>
+        <Label Content="Tempo total de produção em dias" HorizontalAlignment="Left" Margin="11.095,305.951,0,0" VerticalAlignment="Top" Width="298.905"/>
+        <TextBox Name="productionTimeInDays" HorizontalAlignment="Left" Height="23" Margin="342.238,305.951,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301.095"/>
+        <Button Content="Calcular" HorizontalAlignment="Left" Margin="11.095,364.951,0,0" VerticalAlignment="Top" Width="632.238" Click="Calculate"/>
+        <Label Content="Tempo esperado de produção (horas)" HorizontalAlignment="Left" Margin="12.19,403.952,0,0" VerticalAlignment="Top" Width="298.905"/>
+        <Label Content="Tempo atual de produção (horas)" HorizontalAlignment="Left" Margin="11.095,434.952,0,0" VerticalAlignment="Top" Width="298.905"/>
+        <Label Name="actualWorkedTime" Content="0h" HorizontalAlignment="Left" Margin="345.523,434.952,0,0" VerticalAlignment="Top" Width="298.905"/>
+        <Label Name="expectedWorkTime" Content="0h" HorizontalAlignment="Left" Margin="344.428,403.952,0,0" VerticalAlignment="Top" Width="298.905"/>
+        <Label Content="Tempo total de produção por dia" HorizontalAlignment="Left" Margin="10,333.951,0,0" VerticalAlignment="Top" Width="298.905"/>
+        <TextBox Name="productionTimeInHours" HorizontalAlignment="Left" Height="23" Margin="342.238,333.951,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+        <Button Content="Próximo" HorizontalAlignment="Left" Margin="12.19,477,0,0" VerticalAlignment="Top" Width="632.238" Click="Next"/>
+    </Grid>
+</Page>
